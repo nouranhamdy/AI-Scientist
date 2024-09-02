@@ -57,7 +57,16 @@ RUN git checkout 8b0d9485423f74e5eb199324cf362765596538d3 \
 
 # Clone the AI-Scientist repository
 WORKDIR /app
-RUN git clone https://github.com/SakanaAI/AI-Scientist.git
+#RUN git clone https://github.com/SakanaAI/AI-Scientist.git
+COPY . .
+COPY ./data /app/AI-Scientist/data
+COPY ./docs /app/AI-Scientist/docs
+COPY ./example_papers /app/AI-Scientist/example_papers
+COPY ./review_ai_scientist /app/AI-Scientist/review_ai_scientist
+COPY ./review_iclr_bench /app/AI-Scientist/review_iclr_bench
+COPY ./templates /app/AI-Scientist/templates
+COPY ./launch_scientist.py /app/AI-Scientist/launch_scientist.py
+
 
 # Set working directory to AI-Scientist
 WORKDIR /app/AI-Scientist

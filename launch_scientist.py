@@ -363,7 +363,7 @@ if __name__ == "__main__":
     else:
         raise ValueError(f"Model {args.model} not supported.")
 
-    base_dir = osp.join("templates", args.experiment)
+    base_dir = osp.join("../templates", args.experiment)
     results_dir = osp.join("results", args.experiment)
     ideas = generate_ideas(
         base_dir,
